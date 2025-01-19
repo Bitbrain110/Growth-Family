@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Family</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Serif SC', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f7f0;
+            letter-spacing: 0.8px;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50, #66BB6A);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(46, 125, 50, 0.3);
+        }
+        
+        header::before {
+            content: '🌱';
+            position: absolute;
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 4rem;
+            opacity: 0.3;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        header::after {
+            content: '🌿';
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 4rem;
+            opacity: 0.3;
+            animation: float 4s ease-in-out infinite reverse;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            padding: 3rem 1rem;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0); }
+        }
+
+        header::before, header::after {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-bottom: 4rem;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        h1 {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            font-weight: 400;
+            letter-spacing: 8px;
+            color: #fff;
+            animation: growthAnimation 3s ease-in-out infinite;
+        }
+        
+        h2 {
+            font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+            color: #2E7D32;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #4CAF50;
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+            color: #2E7D32;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            font-size: 1.4rem;
+        }
+
+        .system-diagram img {
+            transition: transform 0.3s ease;
+        }
+
+        .system-diagram img:hover {
+            transform: scale(1.02);
+        }
+
+        ul li {
+            color: #1B5E20;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            letter-spacing: 0.8px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #1B5E20, #2E7D32);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 -2px 15px rgba(46, 125, 50, 0.2);
+            margin-top: 0;
+        }
+
+        .footer p {
+            color: #ffffff;
+            margin: 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        @keyframes growthAnimation {
+            0% { transform: scale(1) rotate(-1deg); }
+            50% { transform: scale(1.02) rotate(1deg); }
+            100% { transform: scale(1) rotate(-1deg); }
+        }
+
+        .header-content h1 {
+            animation: growthAnimation 3s ease-in-out infinite;
+        }
+
+        .family-photos img {
+            border: 3px solid #4CAF50;
+            transition: all 0.3s ease;
+        }
+
+        .family-photos img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+        }
+
+        ::selection {
+            background: #81C784;
+            color: white;
+        }
+
+        p {
+            line-height: 2;
+            font-size: 1.1rem;
+            color: #444;
+            text-align: justify;
+            letter-spacing: 1px;
+        }
+
+        .header-content p {
+            font-family: 'ZCOOL KuaiLe', 'Noto Serif SC', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            line-height: 2.2;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 添加副标题分行样式 */
+        .subtitle-line {
+            display: block;
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .subtitle-line:first-child {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .subtitle-line:last-child {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .diagram-description {
+            font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #2E7D32;
+            margin: 1.5rem 0;
+        }
+
+        .family-photos p {
+            font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+            font-size: 1.15rem;
+            color: #2E7D32;
+            margin-top: 1.2rem;
+            font-style: normal;
+        }
+
+        /* 服务列表特殊样式 */
+        .section:has(h2:contains("我们的服务")) p {
+            font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+            font-size: 1.15rem;
+            color: #2E7D32;
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        /* 联系方式特殊样式 */
+        .section:has(h2:contains("联系我们")) {
+            margin-bottom: 0;
+        }
+
+        /* 更新社交媒体链接样式 */
+        .social-links {
+            display: flex;
+            gap: 30px;
+            margin: 2rem 0 4rem 0;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.15rem;
+            padding: 0.8rem 1.2rem;
+            background: #4CAF50;
+            border-radius: 30px;
+            min-width: 160px;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+        }
+
+        .social-links a:hover {
+            background: #2E7D32;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+        }
+
+        .social-links i {
+            font-size: 24px;
+            margin-right: 12px;
+            color: #ffffff;
+        }
+
+        .social-links img {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            filter: brightness(0) invert(1);
+        }
+
+        .social-links span {
+            font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+            color: #ffffff;
+        }
+
+        .main-blocks {
+            display: flex;
+            gap: 30px;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .block-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .block-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.15);
+        }
+
+        .block-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .block-card h2 {
+            color: #2E7D32;
+            border: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        .block-card p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .block-card .icon {
+            font-size: 3rem;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            opacity: 0.2;
+            transform: rotate(-15deg);
+            transition: all 0.3s ease;
+        }
+
+        .block-card:hover .icon {
+            transform: rotate(0deg) scale(1.1);
+            opacity: 0.3;
+        }
+
+        .learn-more {
+            display: inline-block;
+            color: #4CAF50;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .block-card:hover .learn-more {
+            transform: translateX(10px);
+        }
+
+        .growth-family {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7f0 100%);
+        }
+
+        .family-os {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7f0 100%);
+        }
+
+        .social-icon {
+            margin-right: 12px;
+            color: #ffffff;
+        }
+        
+        /* 更新社交媒体链接样式 */
+        .social-links a {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.15rem;
+            padding: 0.8rem 1.2rem;
+            background: #4CAF50;
+            border-radius: 30px;
+            min-width: 160px;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+        }
+
+        .social-links svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .language-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.9);
+            color: #2E7D32;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .language-btn:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        [lang="en"] {
+            display: none;
+        }
+
+        .en [lang="zh"] {
+            display: none;
+        }
+
+        .en [lang="en"] {
+            display: block;
+        }
+
+        .service-modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-module {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(76, 175, 80, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .service-module:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.1);
+            background: white;
+        }
+
+        .service-module h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(76, 175, 80, 0.2);
+        }
+
+        .service-module ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-module li {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #444;
+        }
+
+        .service-module li::before {
+            content: "•";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .family-photos {
+            margin: 2rem 0;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            align-items: start;
+            padding: 1rem;
+        }
+
+        .photo-item {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: #f5f5f5;
+            border-radius: 12px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .photo-item:hover {
+            background-color: #f0f7f0;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .family-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            background-color: transparent;
+        }
+
+        .family-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .photo-caption {
+            text-align: center;
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+            flex-grow: 1;
+        }
+
+        /* 响应式布局 */
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-switch">
+        <button class="language-btn" onclick="toggleLanguage()">
+            <span lang="zh">English</span>
+            <span lang="en">中文</span>
+        </button>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <h1>Growth Family</h1>
+            <p>
+                <span class="subtitle-line">
+                    <span lang="zh">Growth Family-构建兼具稳定和成长的家庭系统</span>
+                    <span lang="en">Growth Family - Building a Stable and Growing Family System</span>
+                </span>
+                <span class="subtitle-line">
+                    <span lang="zh">Family OS-构建家庭操作系统，数字化工具支撑家庭目标</span>
+                    <span lang="en">Family OS - Building Family Operating System, Supporting Family Goals with Digital Tools</span>
+                </span>
+            </p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>
+                <span lang="zh">关于我们</span>
+                <span lang="en">About Us</span>
+            </h2>
+            <p>
+                <span lang="zh">Growth Family是一个致力于促进家庭成长和发展的平台。我们相信，每个家庭都有其独特的价值和潜力，通过互相学习和支持，我们可以共同创造更美好的未来。</span>
+                <span lang="en">Growth Family is a platform dedicated to promoting family growth and development. We believe that every family has its unique value and potential. Through mutual learning and support, we can create a better future together.</span>
+            </p>
+        </div>
+
+        <!-- 添加两个主要板块 -->
+        <div class="main-blocks">
+            <a href="./growth-family.html" class="block-card growth-family">
+                <div class="block-content">
+                    <h2>Growth Family</h2>
+                    <p>
+                        <span lang="zh">构建兼具稳定和成长的家庭系统</span>
+                        <span lang="en">Building a Stable and Growing Family System</span>
+                    </p>
+                    <div class="icon">🌱</div>
+                    <span class="learn-more">
+                        <span lang="zh">了解更多 →</span>
+                        <span lang="en">Learn More →</span>
+                    </span>
+                </div>
+            </a>
+
+            <a href="./family-os.html" class="block-card family-os">
+                <div class="block-content">
+                    <h2>Family OS</h2>
+                    <p>
+                        <span lang="zh">构建家庭操作系统，数字化工具支撑家庭目标</span>
+                        <span lang="en">Building Family Operating System with Digital Tools</span>
+                    </p>
+                    <div class="icon">⚡</div>
+                    <span class="learn-more">
+                        <span lang="zh">了解更多 →</span>
+                        <span lang="en">Learn More →</span>
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>
+                <span lang="zh">我们的家庭</span>
+                <span lang="en">Our Family</span>
+            </h2>
+            <div class="family-photos">
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="./家庭照片.jpg" alt="Our Family of Three" class="family-image">
+                        <p class="photo-caption">
+                            <span lang="zh">我们幸福的三口之家</span>
+                            <span lang="en">Our Happy Family of Three</span>
+                        </p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="./朗哥.JPG" alt="Reading Time" class="family-image">
+                        <p class="photo-caption">
+                            <span lang="zh">从小爱读书的朗哥</span>
+                            <span lang="en">Lang: A Book Lover Since Childhood</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>
+                <span lang="zh">我们的服务</span>
+                <span lang="en">Our Services</span>
+            </h2>
+            
+            <div class="service-modules">
+                <!-- 家庭系统搭建服务 -->
+                <div class="service-module">
+                    <h3>
+                        <span lang="zh">家庭系统搭建</span>
+                        <span lang="en">Family System Building</span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <span lang="zh">家庭目标系统设计（3个月）</span>
+                            <span lang="en">Family Goal System Design (3 months)</span>
+                        </li>
+                        <li>
+                            <span lang="zh">家庭数字化工具搭建（1个月）</span>
+                            <span lang="en">Family Digital Tools Setup (1 month)</span>
+                        </li>
+                        <li>
+                            <span lang="zh">家庭行动系统辅导（6个月）</span>
+                            <span lang="en">Family Action System Guidance (6 months)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 儿童成长服务 -->
+                <div class="service-module">
+                    <h3>
+                        <span lang="zh">儿童成长指导</span>
+                        <span lang="en">Child Development Guidance</span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <span lang="zh">儿童学习力提升（12次课程）</span>
+                            <span lang="en">Child Learning Enhancement (12 sessions)</span>
+                        </li>
+                        <li>
+                            <span lang="zh">亲子关系优化（8次课程）</span>
+                            <span lang="en">Parent-Child Relationship (8 sessions)</span>
+                        </li>
+                        <li>
+                            <span lang="zh">个性化成长规划（季度更新）</span>
+                            <span lang="en">Personalized Growth Plan (Quarterly)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 家庭财务规划 -->
+                <div class="service-module">
+                    <h3>
+                        <span lang="zh">家庭财务规划</span>
+                        <span lang="en">Family Financial Planning</span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <span lang="zh">家庭资产配置方案（一年期）</span>
+                            <span lang="en">Family Asset Allocation (Annual)</span>
+                        </li>
+                        <li>
+                            <span lang="zh">子女教育基金规划（阶段性）</span>
+                            <span lang="en">Children's Education Fund Planning</span>
+                        </li>
+                        <li>
+                            <span lang="zh">家庭保险规划咨询（一年期）</span>
+                            <span lang="en">Family Insurance Planning (Annual)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>
+                <span lang="zh">联系我们</span>
+                <span lang="en">Contact Us</span>
+            </h2>
+            <p>
+                <span lang="zh">电话：</span>
+                <span lang="en">Phone: </span>
+                18801920652
+            </p>
+            <p>
+                <span lang="zh">邮箱：</span>
+                <span lang="en">Email: </span>
+                info@growthfamily.com
+            </p>
+            <p>
+                <span lang="zh">地址：北京市朝阳区一土学校</span>
+                <span lang="en">Address: Yitu School, Chaoyang District, Beijing</span>
+            </p>
+            
+            <div class="social-links">
+                <a href="Family OS" target="_blank">
+                    <i class="fab fa-weixin"></i>
+                    <span>
+                        <span lang="zh">微信公众号</span>
+                        <span lang="en">WeChat Official</span>
+                    </span>
+                </a>
+                <a href="https://xiaoyuzhou.fm/your-account" target="_blank">
+                    <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                    </svg>
+                    <span>
+                        <span lang="zh">小宇宙</span>
+                        <span lang="en">Xiaoyuzhou</span>
+                    </span>
+                </a>
+                <a href="https://www.xiaohongshu.com/user/profile/54ed4b404fac631ff77994fe" target="_blank">
+                    <svg class="social-icon" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M19.2,6.8h-3.9V4.5c0-0.9-0.7-1.6-1.6-1.6H9.1C8.2,2.9,7.5,3.6,7.5,4.5v2.3H3.6c-0.9,0-1.6,0.7-1.6,1.6v11.2 c0,0.9,0.7,1.6,1.6,1.6h15.6c0.9,0,1.6-0.7,1.6-1.6V8.4C20.8,7.5,20.1,6.8,19.2,6.8z M9.1,4.5h4.6v2.3H9.1V4.5z M19.2,19.6H3.6 V8.4h15.6V19.6z M11.4,16.7c2.1,0,3.8-1.7,3.8-3.8c0-2.1-1.7-3.8-3.8-3.8c-2.1,0-3.8,1.7-3.8,3.8C7.6,15,9.3,16.7,11.4,16.7z"/>
+                    </svg>
+                    <span>
+                        <span lang="zh">小红书</span>
+                        <span lang="en">RED</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>
+            <span lang="zh">&copy; 2024 Growth Family. 版权所有</span>
+            <span lang="en">&copy; 2024 Growth Family. All Rights Reserved</span>
+        </p>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            if (body.classList.contains('en')) {
+                body.classList.remove('en');
+                localStorage.setItem('language', 'zh');
+            } else {
+                body.classList.add('en');
+                localStorage.setItem('language', 'en');
+            }
+        }
+
+        // 页面加载时检查语言设置
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLanguage = localStorage.getItem('language');
+            if (savedLanguage === 'en') {
+                document.body.classList.add('en');
+            }
+        });
+    </script>
+</body>
+</html>
